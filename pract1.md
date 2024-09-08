@@ -34,8 +34,14 @@ xfs
 ```
 ## Задача 2
 
-
-
+```
+localhost:~# cat /etc/protocols | awk '{print $2, $1}' | sort -n -r | head -n 5
+103 pim
+98 encap
+94 ipip
+89 ospf
+81 vmtp
+```
 ## Задача 3
 
 
