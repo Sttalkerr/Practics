@@ -44,7 +44,27 @@ localhost:~# cat /etc/protocols | awk '{print $2, $1}' | sort -n -r | head -n 5
 ```
 ## Задача 3
 
+```
+nano banner.sh                                          
+#!/bin/bash
+text=$1
+length=${#text}
+line="+-"
+for ((i=0;i<length;i++))
+do
+line+="-"
+done
+line+="-+"
+echo $line
+echo "|" $text "|"
+echo $line
 
+localhost:~# chmod +x banner.sh
+
+localhost:~# ./banner.sh "Hello from RTU MIREA!"
++-----------------------+
+| Hello from RTU MIREA! |
++-----------------------+
 
 ## Задача 4
 
