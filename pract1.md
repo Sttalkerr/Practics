@@ -1,3 +1,4 @@
+# Практическое занятие №1.
 localhost:~# cut -d: -f1 /etc/passwd | sort
 adm
 at
