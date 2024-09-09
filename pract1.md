@@ -71,7 +71,5 @@ localhost:~# ./banner.sh "Hello from RTU MIREA!"
 
 ## Задача 5
 ```
-
-![image](https://github.com/user-attachments/assets/8b8faa3d-1e8f-4c1c-af87-640cba6e6c15)
-
+![image](https://github.com/user-attachments/assets/c295f196-b5b9-4ce1-8069-a5dcd0e395c5)
 
