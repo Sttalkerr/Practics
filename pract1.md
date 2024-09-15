@@ -92,6 +92,8 @@ done
 ```
 ![image](https://github.com/user-attachments/assets/7442a48a-87e3-43e0-a636-d7fca572df30)
 
+![image](https://github.com/user-attachments/assets/0a6ef384-9be2-4759-979c-e0923397be06)
+
 ## Задача 8. Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
 ![image](https://github.com/user-attachments/assets/bbe434d7-7765-496d-aab1-dbe10ed7a150)
 
@@ -112,4 +114,12 @@ echo "Замена завершена. Результат сохранен в $o
 
 ![image](https://github.com/user-attachments/assets/f41db448-a3c0-4270-a115-0c7e2e3b5db8)
 
-## Задача 10.
+## Задача 10. Написать программу, которая выводит названия всех пустых текстовых файлов в указанной директории. Директория передается в программу параметром.
+
+```
+#!/bin/bash
+directory="$1"
+find "$directory" -type f -empty -exec file {} \; | grep "empty" | cut -d: -f1
+```
+![image](https://github.com/user-attachments/assets/517c521e-94ae-4e48-af63-25903f1427d5)
+
