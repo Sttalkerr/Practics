@@ -108,6 +108,8 @@ echo "Замена завершена. Результат сохранен в $o
 
 ![image](https://github.com/user-attachments/assets/894746bb-b643-4d11-8179-3d5c3f4a62ff)
 
+![image](https://github.com/user-attachments/assets/9611b8d6-2569-457e-882a-08191686d649)
+
 ![image](https://github.com/user-attachments/assets/f41db448-a3c0-4270-a115-0c7e2e3b5db8)
 
 ## Задача 10.
