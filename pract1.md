@@ -60,8 +60,9 @@ localhost:/usr/local/bin# ls
 
 ## Задача 6. Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
 
-![image](https://github.com/user-attachments/assets/931dd5c8-80a5-4b69-97e6-9f95532b892b)
-![image](https://github.com/user-attachments/assets/acd00834-649c-49cf-bd7d-42951bfc9395)
+![image](https://github.com/user-attachments/assets/d1457d26-5bb6-4685-91a8-b8a7ecdbcc00)
+
+![image](https://github.com/user-attachments/assets/24b5a33b-ca09-43cd-9fc5-19e9e8c484cf)
 
 
 
