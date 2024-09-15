@@ -77,15 +77,37 @@ fi
 
 
 
-## Задача 7.
+## Задача 7. Написать программу для нахождения файлов-дубликатов (имеющих 1 или более копий содержимого) по заданному пути (и подкаталогам).
+```
+#!/bin/bash
+if [ $# -ne 1 ]; then
+    echo "Использование: $0 <Путь к каталогу>"
+    exit 1
+fi
+directory="$1"
+ 
+find "$directory" -type f -print0 | xargs -0 md5sum | sort | uniq -d -w 32 | se>
+    echo "Дубликат: $duplicate"
+done
+```
+![image](https://github.com/user-attachments/assets/7442a48a-87e3-43e0-a636-d7fca572df30)
 
+## Задача 8. Написать программу, которая находит все файлы в данном каталоге с расширением, указанным в качестве аргумента и архивирует все эти файлы в архив tar.
+![image](https://github.com/user-attachments/assets/bbe434d7-7765-496d-aab1-dbe10ed7a150)
 
+## Задача 9. Написать программу, которая заменяет в файле последовательности из 4 пробелов на символ табуляции. Входной и выходной файлы задаются аргументами.
+```
+#!/bin/bash
+input_file="$1"
+output_file="$2"
+ 
+sed 's/ /\t/g' "$input_file" > "$output_file"
+echo "Замена завершена. Результат сохранен в $output_file."
+```
+![image](https://github.com/user-attachments/assets/13c4472f-b913-4e68-824f-7b956ace2e39)
 
-## Задача 8.
+![image](https://github.com/user-attachments/assets/894746bb-b643-4d11-8179-3d5c3f4a62ff)
 
-
-
-## Задача 9.
-
+![image](https://github.com/user-attachments/assets/f41db448-a3c0-4270-a115-0c7e2e3b5db8)
 
 ## Задача 10.
