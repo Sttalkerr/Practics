@@ -13,7 +13,7 @@ localhost:~# cat /etc/protocols | awk '{print $2, $1}' | sort -n -r | head -n 5
 ```
 ![image](https://github.com/user-attachments/assets/fdfc1df1-b199-40ec-85f7-2fd9305844ae)
 
-## Задача 3
+## Задача 3.Написать программу banner средствами bash для вывода текстов, как в следующем примере (размер баннера должен меняться!).
 
 ```
 nano banner.sh                                          
@@ -39,7 +39,8 @@ localhost:~# ./banner.sh "Hello from RTU MIREA!"
 ```
 ![image](https://github.com/user-attachments/assets/8d49077b-a5da-495d-abc7-e07b8c6fa2f3)
 
-## Задача 4
+## Задача 4. Написать программу для вывода всех идентификаторов (по правилам C/C++ или Java) в файле (без повторений).
+![image](https://github.com/user-attachments/assets/81cf4e87-bc5a-4b69-982f-96d06b6ce620)
 
 
 ## Задача 5
