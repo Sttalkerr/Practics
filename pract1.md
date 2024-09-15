@@ -119,7 +119,9 @@ echo "Замена завершена. Результат сохранен в $o
 ```
 #!/bin/bash
 directory="$1"
-find "$directory" -type f -empty -exec file {} \; | grep "empty" | cut -d: -f1
+find $1 -type f -size 0 -maxdepth 1
 ```
-![image](https://github.com/user-attachments/assets/517c521e-94ae-4e48-af63-25903f1427d5)
+![image](https://github.com/user-attachments/assets/b7f215b7-b0ba-4154-9c49-3c419363e276)
+
+![image](https://github.com/user-attachments/assets/c84c845e-791a-4350-933b-654de8ae4d1d)
 
