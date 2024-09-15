@@ -59,10 +59,21 @@ localhost:/usr/local/bin# ls
 ![image](https://github.com/user-attachments/assets/58f33e4c-aa39-4b5c-822f-fc8e9ec5ad5c)
 
 ## Задача 6. Написать программу для проверки наличия комментария в первой строке файлов с расширением c, js и py.
-
+```
+#!/bin/bash
+line=$(head -1 $1)
+if [[$line == "//"* ]] || [[$line == "#"* ]]; then
+echo "First line have comment"
+else
+echo "First line dont have comment"
+fi
+```
 ![image](https://github.com/user-attachments/assets/d1457d26-5bb6-4685-91a8-b8a7ecdbcc00)
 
 ![image](https://github.com/user-attachments/assets/24b5a33b-ca09-43cd-9fc5-19e9e8c484cf)
+
+![image](https://github.com/user-attachments/assets/01f2c3dd-71b6-44db-b128-7cbf9d77aef7)
+![image](https://github.com/user-attachments/assets/06976972-00f8-451c-b36e-6793d7f6804a)
 
 
 
