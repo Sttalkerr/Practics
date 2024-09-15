@@ -36,6 +36,8 @@ localhost:~# ./banner.sh "Hello from RTU MIREA!"
 +-----------------------+
 | Hello from RTU MIREA! |
 +-----------------------+
+```
+![image](https://github.com/user-attachments/assets/8d49077b-a5da-495d-abc7-e07b8c6fa2f3)
 
 ## Задача 4
 
