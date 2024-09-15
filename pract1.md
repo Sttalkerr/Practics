@@ -43,5 +43,19 @@ localhost:~# ./banner.sh "Hello from RTU MIREA!"
 ![image](https://github.com/user-attachments/assets/81cf4e87-bc5a-4b69-982f-96d06b6ce620)
 
 
-## Задача 5
+## Задача 5. Написать программу для регистрации пользовательской команды (правильные права доступа и копирование в /usr/local/bin).
+
 ```
+#!/bin/bash
+chmod u+rwx $1
+cp $1 /usr/local/bin
+```
+localhost:~# sudo ./regger.sh mama.sh
+localhost:~# cd /usr/local/bin
+localhost:/usr/local/bin# ls
+```
+
+```
+![image](https://github.com/user-attachments/assets/a0c1f520-1429-46a0-bc01-5a13ed0f2d12)
+![image](https://github.com/user-attachments/assets/58f33e4c-aa39-4b5c-822f-fc8e9ec5ad5c)
+
