@@ -165,5 +165,52 @@ for i in range(10):
 
 ## Задача 5. Язык выражений алгебры логики.
 ```
+import random
 
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+
+BNF = '''
+E = E | E
+E = E & E
+E = ~ E
+E = (E)
+E = x
+E = y
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'E'))
+
+def generate_random_logical_expressions(n):
+    expressions = set()
+    
+    while len(expressions) < n:
+        result = generate_expression(parse_bnf(BNF), 'E')
+        expressions.add(result)
+    
+    return expressions
+
+logical_expressions = generate_random_logical_expressions(10)
+for expr in logical_expressions:
+    print(expr)
 ```
