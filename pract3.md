@@ -91,7 +91,7 @@ let students : List Student =
 in  { groups = groups, students = students, subject = "Конфигурационное управление" }
 ```
 
-## Задача 3.
+## Задача 3. Язык нулей и единиц.
 ```
 import random
 
@@ -126,3 +126,44 @@ for i in range(10):
 
 ```
 ![image](https://github.com/user-attachments/assets/4da9f0d3-298e-4d1e-a131-50edc8d5aee0)
+
+## Задача 4. Язык правильно расставленных скобок двух видов.
+```
+import random
+
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+
+BNF = '''
+E = ( E ) | { E } |
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'E'))
+
+```
+![image](https://github.com/user-attachments/assets/43efaa82-9805-4eb7-b00f-f65821b6e538)
+
+## Задача 5. Язык выражений алгебры логики.
+```
+
+```
