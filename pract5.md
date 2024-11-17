@@ -94,3 +94,80 @@ reboot
 ```
 qemu-system-x86_64 -hda alpine_disk.qcow2 -boot c -m 512
 ```
+
+## Задача 5. (после разбора на семинаре и написания у доски базовой части эмулятора древней игровой приставки CHIP-8)
+Реализовать вывод на экран.
+Добиться запуска Тетриса.
+Реализовать ввод с клавиатуры.
+Добиться успешной работы всех приложений.
+```
+class Chip8:
+    def __init__(self):
+        self.memory = [0] * 4096  
+        self.V = [0] * 16         
+        self.I = 0                
+        self.pc = 0x200           
+        self.stack = []           
+        self.display = [0] * (64 * 32) 
+        self.keys = [0] * 16      
+```
+```
+def load_game(self, game):
+    with open(game, 'rb') as file:
+        game_data = file.read()
+        for i in range(len(game_data)):
+            self.memory[0x200 + i] = game_data[i]
+```
+```
+import pygame
+
+    def initialize_graphics(self):
+        pygame.init()
+        self.window = pygame.display.set_mode((640, 320))
+        pygame.display.set_caption("CHIP-8 Emulator")
+
+    def draw_display(self):
+        for x in range(64):
+            for y in range(32):
+                color = (255, 255, 255) if self.display[x + (y * 64)] else (0, 0, 0)
+                pygame.draw.rect(self.window, color, (x * 10, y * 10, 10, 10))
+        pygame.display.flip()
+```
+```
+def handle_keys(self):
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_1:
+                self.keys[0] = 1
+            
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_1:
+                self.keys[0] = 0
+```
+```
+def emulate_cycle(self):
+    self.handle_keys()
+    
+    opcode = self.memory[self.pc] << 8 | self.memory[self.pc + 1]
+
+    if opcode & 0xF000 == 0xA000:  
+        self.I = opcode & 0x0FFF
+        self.pc += 2
+    self.draw_display()   
+```
+```
+def main():
+    chip8 = Chip8()
+    chip8.initialize_graphics()
+    chip8.load_game("tetris.ch8") 
+
+    while True:
+        chip8.emulate_cycle()
+
+if __name__ == "__main__":
+    main()
+```
