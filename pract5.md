@@ -86,7 +86,7 @@ qemu-img create -f qcow2 alpine_disk.qcow2 500M
 qemu-system-x86_64 -cdrom path/to/alpine.iso -hda alpine_disk.qcow2 -boot d -m 512
 ```
 ```
-echo "Скляр Матвей" > /etc/motd
+echo "Sklyar Matvey" > /etc/motd
 ```
 ```
 reboot
@@ -94,6 +94,7 @@ reboot
 ```
 qemu-system-x86_64 -hda alpine_disk.qcow2 -boot c -m 512
 ```
+![image](https://github.com/user-attachments/assets/894fa69b-faee-4605-8edf-b34f4a9cb2d5)
 
 ## Задача 5. (после разбора на семинаре и написания у доски базовой части эмулятора древней игровой приставки CHIP-8)
 Реализовать вывод на экран.
